@@ -11,5 +11,18 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                echo " Workspace ${env.WORKSPACE} exec ${env.EXECUTOR_NUMBER}"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
     }
 }
